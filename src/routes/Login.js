@@ -24,14 +24,12 @@ function Login() {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>
-            Username:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
+          <input
+            type="text"
+            value={username}
+            placeholder="이름을 입력해주세요"
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
         <div>
           <button type="submit">Login</button>

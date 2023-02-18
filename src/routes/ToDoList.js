@@ -12,7 +12,9 @@ function ToDoList() {
   //Todo 추가
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (!inputValue) return;
+    if (!inputValue) {
+      return;
+    }
     // input 에 text가 빈칸이 아닐때.
     setTodos([...todos, { text: inputValue }]);
     setInputValue("");

@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -20,19 +21,22 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <h1 className="title">LOGIN</h1>
+      <form onSubmit={handleSubmit} className="loginForm">
         <div>
-          <input
-            type="text"
+          <TextField
+            id="filled-basic"
+            label="이름을 입력해주세요"
+            variant="filled"
             value={username}
-            placeholder="이름을 입력해주세요"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
-          <button type="submit">Login</button>
+        <div className="loginBtn">
+          <Button variant="outlined" type="submit">
+            Login
+          </Button>
         </div>
       </form>
       {error && <div>{error}</div>}

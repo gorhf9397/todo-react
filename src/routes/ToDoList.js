@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Checkbox from "@mui/material/Checkbox";
+import { Button, TextField, Checkbox } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
@@ -55,48 +54,57 @@ function ToDoList() {
 
   // console.log(todos);
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
-        <TextField
-          id="outlined-basic"
-          label="할 일을 입력해주세요."
-          variant="outlined"
-          size="small"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <Button variant="contained" type="submit">
-          할일추가
+    <div className="todoContainer">
+      <div className="todoList">
+        <h1 className="todoTitle">오늘 당장 할 일</h1>
+        <form onSubmit={handleFormSubmit}>
+          <TextField
+            className="todoAddText"
+            id="filled-required"
+            label="할 일을 입력해주세요."
+            variant="filled"
+            size="small"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          <Button
+            className="todoAddBtn"
+            variant="contained"
+            type="submit"
+            style={{ borderRadius: "0%" }}
+          >
+            <AddIcon fontSize="medium" />
+          </Button>
+        </form>
+        <Button variant="contained" onClick={handleCheckRemove}>
+          완료된 일 제거
         </Button>
-      </form>
-      <Button variant="contained" onClick={handleCheckRemove}>
-        완료된 일 제거
-      </Button>
-      <ul>
-        {/* 배열에 null or undifined 가 아닌지 확인 */}
-        {todos &&
-          todos.map((todo, index) => (
-            <li key={index}>
-              <div className={todo.checked ? "check" : ""}>{todo.text}</div>
-              <Checkbox
-                size="small"
-                checked={todo.checked ? "checked" : ""}
-                // 디스트럭처링
-                onChange={({ target: { checked } }) =>
-                  handleCheckBox(index, checked)
-                }
-              />
-              <Button
-                size="small"
-                variant="outlined"
-                color="primary"
-                onClick={() => handleRemoveTodo(index)}
-              >
-                ❌
-              </Button>
-            </li>
-          ))}
-      </ul>
+        <ul>
+          {/* 배열에 null or undifined 가 아닌지 확인 */}
+          {todos &&
+            todos.map((todo, index) => (
+              <li key={index}>
+                <div className={todo.checked ? "check" : ""}>{todo.text}</div>
+                <Checkbox
+                  size="small"
+                  checked={todo.checked ? "checked" : ""}
+                  // 디스트럭처링
+                  onChange={({ target: { checked } }) =>
+                    handleCheckBox(index, checked)
+                  }
+                />
+                <Button
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                  onClick={() => handleRemoveTodo(index)}
+                >
+                  ❌
+                </Button>
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }

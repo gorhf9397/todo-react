@@ -22,14 +22,21 @@
 <img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG" width="300" height="300"/> <br>
 - **할 일은 최대 6개 까지로 제한했습니다.**
 
-```const newTodos = [...todos];
-if (newTodos.length < 6) {
-  setTodos([...todos, { text: inputValue }]);
-  setInputValue("");
-} else {
-  alert("최대 6개 까지 작성 가능");
-}
-};
+```JavaScript 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (!inputValue) {
+      return;
+    }
+    // input 에 text가 빈칸이 아닐때.
+    const newTodos = [...todos];
+    if (newTodos.length < 6) {
+      setTodos([...todos, { text: inputValue }]);
+      setInputValue("");
+    } else {
+      alert("최대 6개 까지 작성 가능");
+    }
+  };
 ```
 
 - **개별 삭제가 가능하게 구현 하였고 **

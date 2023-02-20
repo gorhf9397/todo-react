@@ -46,3 +46,13 @@
 <img src="https://user-images.githubusercontent.com/108771927/220031754-d48fa9a8-a82c-4198-81a4-7382025f366b.JPG" width="300" height="300"/>
 
 - **개별 삭제가 가능하게 구현하였고 checkbox를 통해 완료된 목록 전부 삭제를 추가하였습니다**
+
+```JavaScript
+// check된 할일 제거
+  const handleCheckRemove = () => {
+    const newTodos = [...todos];
+    const falseArr = newTodos.filter((e) => !e.checked);
+    // console.log(falseArr);
+    setTodos(falseArr);
+  };
+```

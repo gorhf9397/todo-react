@@ -16,4 +16,4 @@
 
 ### 로그인 페이지
 
-<img src="https://user-images.githubusercontent.com/108771927/220026574-d39eae35-6588-4a5c-aa87-06f626934fc2.JPG" width="300" height="300"/><img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG)" width="300" height="300"/>
+<img src="https://user-images.githubusercontent.com/108771927/220026574-d39eae35-6588-4a5c-aa87-06f626934fc2.JPG" width="300" height="300"/><img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG" width="300" height="300"/>

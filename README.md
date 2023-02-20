@@ -22,7 +22,7 @@
 <img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG" width="300" height="300"/> <br>
 - **할 일은 최대 6개 까지로 제한했습니다.**
 
-  const newTodos = [...todos];
+    const newTodos = [...todos];
     if (newTodos.length < 6) {
       setTodos([...todos, { text: inputValue }]);
       setInputValue("");

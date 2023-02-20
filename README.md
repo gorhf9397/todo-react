@@ -10,4 +10,4 @@
 - **MUI** css 라이브러리로 MUI 를 사용해 기본적인 input tag 들 에 디자인을 하였습니다.
 
 ## 🔧 사용 기술
-<img src="https://img.shields.io/badge/React-#61DAFB?style=for-the-badge&logo=React&logoColor=black"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/>

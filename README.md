@@ -20,6 +20,10 @@
 - **첫페이지에 로그인창이 출력됩니다.**
 
 <img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG" width="300" height="300"/> <br>
+- **로그인을 하고 난 후 router를 통해 todoList로 render 됩니다.**
+
+<img src="https://user-images.githubusercontent.com/108771927/220031446-593a260a-c394-4c60-b6c6-e1d2e6b492ee.JPG" width="300" height="300"/> <br>
+
 - **할 일은 최대 6개 까지로 제한했습니다.**
 
 ```JavaScript 
@@ -39,4 +43,6 @@
   };
 ```
 
-- **개별 삭제가 가능하게 구현 하였고 **
+<img src="https://user-images.githubusercontent.com/108771927/220031754-d48fa9a8-a82c-4198-81a4-7382025f366b.JPG" width="300" height="300"/>
+
+- **개별 삭제가 가능하게 구현하였고 checkbox를 통해 완료된 목록 전부 삭제를 추가하였습니다**

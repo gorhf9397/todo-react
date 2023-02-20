@@ -1,4 +1,4 @@
-# 📝 React - for - TodoList
+# 📝 todo-react
 
 **React.js** 학습을 목적으로 제작한 TodoList 토이프로젝트 입니다. <br>
 <a href="https://gorhf9397.github.io/todo-react/">배포URL</a> 입니다.

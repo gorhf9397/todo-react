@@ -16,4 +16,19 @@
 
 ### 로그인 페이지
 
-<img src="https://user-images.githubusercontent.com/108771927/220026574-d39eae35-6588-4a5c-aa87-06f626934fc2.JPG" width="300" height="300"/><img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG" width="300" height="300"/>
+<img src="https://user-images.githubusercontent.com/108771927/220026574-d39eae35-6588-4a5c-aa87-06f626934fc2.JPG" width="300" height="300"/> <br>
+- **첫페이지에 로그인창이 출력됩니다.**
+
+<img src="https://user-images.githubusercontent.com/108771927/220026585-16e4f0e8-bedd-4492-b5a8-0562587b9e6a.JPG" width="300" height="300"/> <br>
+- **할 일은 최대 6개 까지로 제한했습니다.**
+
+  const newTodos = [...todos];
+    if (newTodos.length < 6) {
+      setTodos([...todos, { text: inputValue }]);
+      setInputValue("");
+    } else {
+      alert("최대 6개 까지 작성 가능");
+    }
+  };
+
+- **개별 삭제가 가능하게 구현 하였고 **

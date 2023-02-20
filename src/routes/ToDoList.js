@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, TextField, Checkbox } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
@@ -18,8 +19,13 @@ function ToDoList() {
       return;
     }
     // input 에 text가 빈칸이 아닐때.
-    setTodos([...todos, { text: inputValue }]);
-    setInputValue("");
+    const newTodos = [...todos];
+    if (newTodos.length < 6) {
+      setTodos([...todos, { text: inputValue }]);
+      setInputValue("");
+    } else {
+      alert("최대 6개 까지 작성 가능");
+    }
   };
 
   // Todo 삭제
@@ -46,7 +52,7 @@ function ToDoList() {
   // useEffect 를 사용하여 컴포넌트 렌더링
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
-    setTodos(JSON.parse(storedTodos));
+    setTodos(JSON.parse(storedTodos) || []);
   }, []);
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -76,31 +82,40 @@ function ToDoList() {
             <AddIcon fontSize="medium" />
           </Button>
         </form>
-        <Button variant="contained" onClick={handleCheckRemove}>
+        <Button
+          className="successRemove"
+          variant="contained"
+          onClick={handleCheckRemove}
+          style={{ borderTopLeftRadius: "0", borderTopRightRadius: "0" }}
+        >
           완료된 일 제거
         </Button>
-        <ul>
+        <ul className="todoUl">
           {/* 배열에 null or undifined 가 아닌지 확인 */}
           {todos &&
             todos.map((todo, index) => (
-              <li key={index}>
-                <div className={todo.checked ? "check" : ""}>{todo.text}</div>
-                <Checkbox
-                  size="small"
-                  checked={todo.checked ? "checked" : ""}
-                  // 디스트럭처링
-                  onChange={({ target: { checked } }) =>
-                    handleCheckBox(index, checked)
-                  }
-                />
-                <Button
-                  size="small"
-                  variant="outlined"
-                  color="primary"
-                  onClick={() => handleRemoveTodo(index)}
-                >
-                  ❌
-                </Button>
+              <li key={index} className="todoLI">
+                <div id="todoText" className={todo.checked ? "check" : ""}>
+                  {todo.text}
+                </div>
+                <div className="todoBtn">
+                  <Checkbox
+                    size="small"
+                    checked={todo.checked ? "checked" : ""}
+                    // 디스트럭처링
+                    onChange={({ target: { checked } }) =>
+                      handleCheckBox(index, checked)
+                    }
+                    id="todoCheckBox"
+                  />
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => handleRemoveTodo(index)}
+                  >
+                    <DeleteForeverIcon />
+                  </Button>
+                </div>
               </li>
             ))}
         </ul>

@@ -50,6 +50,8 @@ body {
   background-color: white;
   border: 1px solid rgb(25, 118, 210);
   border-radius: 10px;
+  max-width: 364px;
+  max-height: 374.5px;
 }
 .todoTitle {
   display: flex;
@@ -67,4 +69,26 @@ body {
 }
 .todoAddBtn {
   height: 48px;
+}
+.successRemove {
+  width: 364px;
+}
+.todoUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 228px;
+}
+.todoLI {
+  display: flex;
+  flex-direction: initial;
+  justify-content: space-between;
+  align-items: center;
+}
+#todoText {
+  font-family: "Noto Sans KR", sans-serif;
+  word-break: break-all;
+}
+.todoBtn {
+  display: flex;
 }

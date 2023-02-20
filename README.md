@@ -9,4 +9,5 @@
 - **LocalStorage** 를 사용하여 상태값을 저장하고, 컴포넌트가 마운트될 때 <br> **LocalStorage**에서 상태값을 가져오도록 구현했습니다.
 - **MUI** css 라이브러리로 MUI 를 사용해 기본적인 input tag 들 에 디자인을 하였습니다.
 
-# 🔧 사용 기술
+## 🔧 사용 기술
+<img src="https://img.shields.io/badge/React-#61DAFB?style=for-the-badge&logo=React&logoColor=white">
